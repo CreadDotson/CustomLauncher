@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/mainSearchBar"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/search_box"
+                android:layout_alignParentLeft="true"
+                android:imeOptions="flagNoFullscreen|actionDone"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:inputType="text"
+                android:textColor="@color/black"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/battery_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/ic_battery_unknown"
+        android:layout_alignBottom="@+id/main_toolbar" />
+
+    <ImageView
+        android:id="@+id/wifi_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/battery_icon"
+        app:srcCompat="@drawable/ic_battery_unknown"
+        android:layout_alignBottom="@+id/main_toolbar" />
+
+    <ImageView
+        android:id="@+id/location_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/wifi_icon"
+        app:srcCompat="@drawable/ic_battery_unknown"
+        android:layout_alignBottom="@+id/main_toolbar" />
+
+    <ImageView
+        android:id="@+id/network_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/main_toolbar"
+        android:layout_toStartOf="@+id/location_icon"
+        app:srcCompat="@drawable/ic_battery_unknown"
+        android:layout_alignParentTop="true" />
+
+    <TextClock
+        android:id="@+id/textClock2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/network_icon" />
+
+    <TextView
+        android:id="@+id/battery_pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/wifi_icon"
+        android:layout_alignBottom="@+id/main_toolbar" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_grid_layout"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/main_toolbar" />
+
+</RelativeLayout>
